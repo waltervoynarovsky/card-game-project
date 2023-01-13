@@ -32,6 +32,10 @@ public class CardGame {
         Card topCard = deckOfCards.get(deckOfCards.size() - 1);
         deckOfCards.remove(deckOfCards.size() - 1);
         System.out.println(topCard);
+        if (deckOfCards.size() == 0) {
+            createDeck();
+            sortCards(CardSorting.shuffle);
+        }
         return topCard;
     }
 
@@ -48,9 +52,9 @@ public class CardGame {
                 break;
 
         }
-        for (Card card : deckOfCards) {
-            System.out.println(card);
-        }
+//        for (Card card : deckOfCards) {
+//            System.out.println(card);
+//        }
 
     }
 
