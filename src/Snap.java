@@ -3,10 +3,18 @@ import java.util.Timer;
 
 public class Snap extends CardGame {
     Commands commands = new Commands();
-    Scanner scanner = new Scanner(System.in);
     boolean gameWin = false;
-
     Timer timer = new Timer();
+
+    Player player = new Player();
+
+    int score = player.getScore();
+
+    Card currentCard = new Card();
+    Card nextCard = new Card();
+
+
+
 
 
     public Snap(String name) {
@@ -18,28 +26,48 @@ public class Snap extends CardGame {
         return commands.getInput();
     }
 
+    public int incrementScore(){
+       return score++;
+    }
     private void restartSnap() {
         if (commands.restartGame().equals("y")) {
-            System.out.println("Restarting game");
+            System.out.println("Restarting the game");
+            System.out.println("Your score so far: " + score);
             gameWin = false;
-            snapGame();
+            snapLoop();
         } else {
             gameWin = true;
             System.out.println("Good bye!");
         }
     }
 
+    public boolean snapHappened(){
+        if (currentCard.getSymbol().equals(nextCard.getSymbol())) {
+            return true;
+        } else {
+           return false;
+        }
+    }
+
+    public String userSnapper = userInput();
+
 
     public void snapLoop() {
+        System.out.println("Please press enter to start the game");
+        userInput();
+            currentCard = dealCard();
+
         while (!gameWin) {
-            Card currentCard = dealCard();
             System.out.println("Press enter to deal card");
             userInput();
-            Card nextCard = dealCard();
-            System.out.println("Press enter to deal card");
-            if (currentCard.getSymbol().equals(nextCard.getSymbol())) {
-                String winningCondition = userInput();
-                if (winningCondition.equals("snap")) {
+            if (userSnapper.equals("snap") && !snapHappened()){
+                score--;
+                System.out.println("IT WASN'T A SNAP, YOUR SCORE " + score);
+            } else {
+                nextCard = dealCard();
+            }
+            if (snapHappened() && userSnapper.equals("snap")) {
+                    incrementScore();
                     gameWin = true;
                     System.out.println("Congratulations, you've won!");
                     System.out.println("Would you like to play again? Y/N");
@@ -47,13 +75,14 @@ public class Snap extends CardGame {
                 }
             }
         }
-    }
 
     public void snapGame() {
         createDeck();
         sortCards(CardSorting.byValue);
-        System.out.println("Please press enter to start the game");
-        userInput();
+        System.out.println("Welcome to the game of Snap");
+        String playerName = player.getPlayerName();
+        System.out.println("Hello " + playerName);
+
         snapLoop();
 
     }

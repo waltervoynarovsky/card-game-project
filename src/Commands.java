@@ -28,5 +28,11 @@ public class Commands {
         restarting = scanner.nextLine().toLowerCase();
         return restarting;
     }
+
+    public String getUserName(){
+        String name = "";
+        name = scanner.nextLine();
+        return name;
+    }
 }
 
