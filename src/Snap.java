@@ -76,7 +76,7 @@ public class Snap extends CardGame {
              else if (snapHappened() && userSnapped(input)) {
                     incrementScore();
                     gameWin = true;
-                    System.out.println("Congratulations, you've won!");
+                    System.out.println("Congratulations, you've earned a point!");
                     System.out.println("Would you like to play again? Y/N");
                     restartSnap();
                 }
