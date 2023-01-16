@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d048cc3-3004-49e7-a396-28d746fdebcc" name="Changes" comment="two player branch created" />
+    <list default="true" id="5d048cc3-3004-49e7-a396-28d746fdebcc" name="Changes" comment="updated communicates" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673884042162</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="updated communicates">
+      <created>1673885085477</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673885085477</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -118,6 +125,7 @@
     <MESSAGE value="Game does work, next will work on adding a player" />
     <MESSAGE value="added a player and the game broke" />
     <MESSAGE value="two player branch created" />
-    <option name="LAST_COMMIT_MESSAGE" value="two player branch created" />
+    <MESSAGE value="updated communicates" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated communicates" />
   </component>
 </project>
