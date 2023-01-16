@@ -29,10 +29,17 @@ public class Commands {
         return restarting;
     }
 
-    public String getUserName(){
+    public String getUserName() {
         String name = "";
         name = scanner.nextLine();
         return name;
     }
+
+    public int getPlayersNumber() {
+        int numberOfPlayers = 1;
+        numberOfPlayers = scanner.nextInt();
+        return numberOfPlayers;
+    }
 }
+
 

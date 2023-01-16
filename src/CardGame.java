@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 public class CardGame {
     private String name;
-    private static ArrayList<Card> deckOfCards = new ArrayList<>(52);
+    private static ArrayList<Card> deckOfCards = new ArrayList<>();
 
     private final String[] suit = {"♠", "♣", "♥", "♦"};
     private final String[] symbol = {"2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"};
@@ -28,16 +28,17 @@ public class CardGame {
         return deckOfCards;
     }
 
-    public Card dealCard() {
-        Card topCard = deckOfCards.get(deckOfCards.size() - 1);
-        deckOfCards.remove(deckOfCards.size() - 1);
+    public Card dealCard(ArrayList<Card> deck) {
+        Card topCard =  deck.get(deck.size() - 1);
+        deck.remove(deck.size() - 1);
         System.out.println(topCard);
-        if (deckOfCards.size() == 0) {
+        if (deck.size() == 0) {
             createDeck();
             sortCards(CardSorting.shuffle);
         }
         return topCard;
     }
+
 
     public void sortCards(CardSorting cardSorting) {
         switch (cardSorting) {
