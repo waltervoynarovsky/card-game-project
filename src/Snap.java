@@ -1,10 +1,12 @@
+import java.sql.SQLOutput;
 import java.util.Scanner;
 import java.util.Timer;
+import java.util.TimerTask;
 
 public class Snap extends CardGame {
     Commands commands = new Commands();
+    Scanner scanner = new Scanner(System.in);
     boolean gameWin = false;
-    Timer timer = new Timer();
 
     Player player = new Player();
 
@@ -12,6 +14,10 @@ public class Snap extends CardGame {
 
     Card currentCard = new Card();
     Card nextCard = new Card();
+
+    int countdown = 2000;
+
+    Timer timer = new Timer("Timer", true);
 
 
 
@@ -37,7 +43,7 @@ public class Snap extends CardGame {
             snapLoop();
         } else {
             gameWin = true;
-            System.out.println("Good bye!");
+            System.out.println("Good bye! Your score was: " + score);
         }
     }
 
@@ -49,31 +55,54 @@ public class Snap extends CardGame {
         }
     }
 
-    public String userSnapper = userInput();
+    public boolean userSnapped(String input){
+       if (input.equals("snap")){
+        return true;
 
+       }
+       return false;
+    }
+
+    public void setTimer() { // TIMER
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+            public void run() {
+                nextCard = dealCard();
+                System.out.println("You missed a snap!");
+            }
+        };
+        timer.schedule(task, 2000);
+
+    }
 
     public void snapLoop() {
         System.out.println("Please press enter to start the game");
         userInput();
-            currentCard = dealCard();
 
         while (!gameWin) {
+             currentCard = dealCard();
             System.out.println("Press enter to deal card");
-            userInput();
-            if (userSnapper.equals("snap") && !snapHappened()){
+            String input = userInput();
+            if (userSnapped(input) && !snapHappened()){
                 score--;
-                System.out.println("IT WASN'T A SNAP, YOUR SCORE " + score);
-            } else {
-                nextCard = dealCard();
+                System.out.println("IT WASN'T A SNAP, YOU'RE LOSING A POINT");
+                System.out.println("Your score: " + score);
             }
-            if (snapHappened() && userSnapper.equals("snap")) {
+            nextCard = currentCard;
+            if (snapHappened()) {
+                    setTimer(); // TIMER
+                    if (userSnapped(input)){
+                    timer.cancel(); // TIMER
                     incrementScore();
                     gameWin = true;
                     System.out.println("Congratulations, you've won!");
                     System.out.println("Would you like to play again? Y/N");
                     restartSnap();
+                    }
                 }
-            }
+            } // END OF LOOP
+
+//        System.out.println("End of  Game Loop");
         }
 
     public void snapGame() {

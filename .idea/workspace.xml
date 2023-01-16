@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d048cc3-3004-49e7-a396-28d746fdebcc" name="Changes" comment="Game does work, next will work on adding a player">
-      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+    <list default="true" id="5d048cc3-3004-49e7-a396-28d746fdebcc" name="Changes" comment="added a player and the game broke">
+      <change afterPath="$PROJECT_DIR$/src/Timer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Commands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Commands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Snap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Snap.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,12 +88,20 @@
       <option name="project" value="LOCAL" />
       <updated>1673623038780</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added a player and the game broke">
+      <created>1673626998265</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673626998265</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Stage 1 and 2 done, created Snap class" />
     <MESSAGE value="Game does work, next will work on adding a player" />
-    <option name="LAST_COMMIT_MESSAGE" value="Game does work, next will work on adding a player" />
+    <MESSAGE value="added a player and the game broke" />
+    <option name="LAST_COMMIT_MESSAGE" value="added a player and the game broke" />
   </component>
 </project>
